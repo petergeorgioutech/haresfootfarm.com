@@ -36,5 +36,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.0-beta
       with:
         server: ftp.gb.stackcp.com
-        username: haresfootfarm.com
+        username: deploy@haresfootfarm.com
         password: ${{ secrets.ftp_password }}

@@ -10,16 +10,20 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+$global_logo				= get_field('global_logo', 'option');
+$contact_form_title			= get_field('contact_form_title', 'option');
+$contact_form_content			= get_field('contact_form_content', 'option');
+
 ?>
 
 <div class="dark-background content-wrapper py-5 contact-form">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h3>COMMENTS</h3>
-				<p>We welcome your feedback on our outline proposal via the comments box below.</p>
+				<h3><?=$contact_form_title?></h3>
+				<p><?=$contact_form_content?></p>
 				<?php echo do_shortcode('[contact-form-7 id="24" title="Comments"]') ?>
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/logo.svg' ); ?>" alt="GRIGGS" class="logo my-3">
+				<img src="<?=$global_logo?>" alt="GRIGGS" class="logo my-3">
 			</div>
 		</div>
 	</div>

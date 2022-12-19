@@ -1,45 +1,73 @@
-<?php get_header(); ?>
+<?php
+$hero_video					= get_field('hero_background_video');
+$hero_image					= get_field('hero_background_image');
+$hero_title					= get_field('hero_title');
+$hero_description			= get_field('hero_description');
+$hero_button_text			= get_field('hero_button_text');
+$hero_button_link			= get_field('hero_button_link');
+$hero_title_colour			= get_field('hero_title_colour');
+$hero_description_colour	= get_field('hero_description_colour');
+$hero_shadow_colour			= get_field('hero_shadow_colour');
 
-<div class="hero-wrapper" style="background-image:url(https://haresfootfarm.local/wp-content/uploads/2022/12/DJI_0801.jpg)">
+$section1_title				= get_field('section1_title');
+$section1_content			= get_field('section1_content');
+$section1_image				= get_field('section1_image');
+
+$location_title				= get_field('location_title');
+$location_content			= get_field('location_content');
+$location_key_title			= get_field('location_key_title');
+$location_key_content		= get_field('location_key_content');
+$location_image_desktop		= get_field('location_image_desktop');
+$location_image_mobile		= get_field('location_image_mobile');
+
+$section2_title				= get_field('section2_title');
+$section2_content			= get_field('section2_content');
+$section2_image				= get_field('section2_image');
+
+$section3_title				= get_field('section3_title');
+$section3_content			= get_field('section3_content');
+$section3_image_1			= get_field('section3_image_1');
+$section3_image_2			= get_field('section3_image_2');
+
+
+get_header();
+?>
+
+<div class="hero-wrapper ". <?php if ($hero_video) :  echo 'has-video'; endif; ?>" style="background-image:url(<?= $hero_image ?>)">
+	<?php if ($hero_video) { ?>
+		<video id="background-video" class="video-full" autoplay loop muted poster="<?= $hero_image ?>">
+			<source src="<?= $hero_video ?>" type="video/mp4">
+		</video>
+	<?php } ?>
 	<div class="hero-wrapper__content">
-		<h1 class="hero-wrapper__content__title">HERESFOOT FARM</h1>
-		<h2 class="hero-wrapper__content__description">AN OUTLINE PROPOSAL FOR 46 HOMES WTH ASSOCIATED LANDSCAPING AND OPEN SPACE IN SHENLEY VILLAGE.</h2>
-		<a href="#about" class="hero-wrapper__content__cta arrow-button">LEARN MORE</a>
+		<h1 class="hero-wrapper__content__title" style="color: <?=$hero_title_colour?>; border-bottom-color: <?=$hero_title_colour?>"><?=$hero_title?></h1>
+		<h2 class="hero-wrapper__content__description" style="color: <?=$hero_description_colour?>; text-shadow: -1px 1px 7px <?=$hero_shadow_colour?>;"><?= $hero_description ?></h2>
+		<a href="<?= $hero_button_link ?>" class="hero-wrapper__content__cta arrow-button"><?= $hero_button_text ?></a>
 	</div>
 </div>
 <div class="container my-5" id="about">
 	<div class="row d-flex justify-content-center align-items-center">
 		<div class="col-12 col-lg-5">
-			<h3>ABOUT US</h3>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum et unde illum necessitatibus doloribus cum animi velit minus accusamus sint, nulla sunt deleniti quas eum libero. Facilis fugiat similique ipsum!</p>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum et unde illum necessitatibus doloribus cum animi velit minus accusamus sint, nulla sunt deleniti quas eum libero. Facilis fugiat similique ipsum!</p>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum et unde illum necessitatibus doloribus cum animi velit minus accusamus sint, nulla sunt deleniti quas eum libero. Facilis fugiat similique ipsum!</p>
+			<h3><?=$section1_title?></h3>
+			<?=$section1_content?>
 		</div>
 		<div class="col-12 col-lg-6 offset-lg-1">
-			<img src="https://haresfootfarm.local/wp-content/uploads/2022/12/DJI_0980.jpg" class="img-fluid">
+			<img src="<?=$section1_image?>" class="img-fluid">
 		</div>
 	</div>
 </div>
 
-<div class="container my-5 location-block" style="background-image:url(https://harrislaneshenley.co.uk/wp-content/uploads/2022/06/Harris-Lane-Shenley-Aerial_edited3-scaled.jpg)">
-	<img src="https://harrislaneshenley.co.uk/wp-content/uploads/2022/06/Harris-Lane-Shenley-Aerial_edited4-1024x996.jpg" class="img-fluid location-block__static-image">
+<div class="container my-5 location-block" style="background-image:url(<?=$location_image_desktop?>)">
+	<img src="<?=$location_image_mobile?>" class="img-fluid location-block__static-image">
 	<div class="location-block__content">
 		<div class="row">
 			<div class="col-12 col-sm-7 location-block__content__location-wrapper">
-				<h3>THE LOCATION</h3>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo odio architecto nostrum culpa veniam iste magni fugit eius, possimus doloremque, dolorum ad dolorem. Accusantium illum mollitia a. Accusantium, molestiae dolore.</p>
+				<h3><?=$location_title?></h3>
+				<p><?=$location_content?></p>
 			</div>
 			<div class="col-12 offset-sm-1 col-sm-4 location-block__content__key-wrapper">
-				<h4>KEY</h4>
-				<ol>
-					<li>Site Location</li>
-					<li>Tesco Express</li>
-					<li>L'Italiana</li>
-					<li>Shenley Primary School</li>
-					<li>Shenley Stores</li>
-					<li>White Horse</li>
-					<li>Old Nursery Close</li>
-				</ol>
+				<h4><?=$location_key_title?></h4>
+				<?=$location_key_content?>
 			</div>
 		</div>
 	</div>
@@ -49,12 +77,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-5">
-				<img src="https://haresfootfarm.local/wp-content/uploads/2022/12/DJI_0883.jpg" class="img-fluid pb-2">
+				<img src="<?=$section2_image?>" class="img-fluid pb-2">
 			</div>
 			<div class="col-12 col-md-6 offset-md-1">
-				<h3>OUR PROPOSAL</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facilis sed vero sint dolorem saepe, magnam rem est temporibus quasi officia. Odio aut tempore sapiente quisquam ducimus perferendis consequuntur debitis!</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facilis sed vero sint dolorem saepe, magnam rem est temporibus quasi officia. Odio aut tempore sapiente quisquam ducimus perferendis consequuntur debitis!</p>
+				<h3><?=$section2_title?></h3>
+				<?=$section2_content?>
 			</div>
 		</div>
 	</div>
@@ -64,13 +91,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h3>LOCAL CHARACTER</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facilis sed vero sint dolorem saepe, magnam rem est temporibus quasi officia. Odio aut tempore sapiente quisquam ducimus perferendis consequuntur debitis!</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facilis sed vero sint dolorem saepe, magnam rem est temporibus quasi officia. Odio aut tempore sapiente quisquam ducimus perferendis consequuntur debitis!</p>
+				<h3><?=$section3_title?></h3>
+				<?=$section3_content?>
 			</div>
 			<div class="col-12 col-md-6 flex-image-wrapper">
-				<img src="https://haresfootfarm.local/wp-content/uploads/2022/12/DJI_0883.jpg" class="">
-				<img src="https://haresfootfarm.local/wp-content/uploads/2022/12/DJI_0883.jpg" class="">
+				<img src="<?=$section3_image_1?>">
+				<img src="<?=$section3_image_2?>">
 			</div>
 		</div>
 	</div>

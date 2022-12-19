@@ -44,13 +44,42 @@ html {
     flex-wrap: wrap;
     width:100%;
     height:100vh;
-    box-shadow: 0px 4px 4px 0px #00000040,inset 0 0 0 1000px rgba(0,0,0,.5);
     background:{
         repeat:no-repeat;
         size:cover;
         position:center center;
     }
     color: white;
+
+    &.has-video{
+        &:before{
+            content:'';
+            background-color:rgba(black, 0.3);
+            position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index: 1;
+        }
+        .hero-wrapper__content{
+            &__title{
+                
+            }
+        }
+    }
+    .video-full{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        object-fit: cover;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
     &__content{
         padding:2rem;   
         position: relative;
@@ -58,19 +87,24 @@ html {
         flex:1;
         text-align: center;
         &__title{
+            z-index: 2;
             display: inline-block;
-            border-bottom:3px solid white;
             padding-bottom: 1rem;
+            color:black;
+            border-bottom:2px solid black;
         }
         &__description{
+            z-index: 2;
             position: absolute;
             top:50%;
             left:10%;
             right:10%;
             text-align: center;
             font-size: 1.1rem;
+            text-shadow: -1px 1px 7px rgba(0,0,0,0.5);
         }
         &__cta{
+            z-index: 2;
             color: white;
             position: absolute;
             width:100%;
@@ -80,6 +114,7 @@ html {
             display: block;
             text-decoration: none;
             font-size: 0.8rem;
+            text-shadow: -1px 1px 7px rgba(0,0,0,0.5);
             &:hover, &:focus{
                 color:white;
                 text-decoration: none;
@@ -94,7 +129,7 @@ html {
                 margin-bottom: 0.5rem;
                 
                 background:{
-                    image:url('https://haresfootfarm.local/wp-content/uploads/2022/12/down-arrow.png');
+                    image:url('/wp-content/uploads/2022/12/down-arrow.png');
                     size:contain;
                     repeat:no-repeat;
                 }
@@ -124,7 +159,6 @@ html {
             text-align: center;
             &__title{
                 display: inline-block;
-                border-bottom:3px solid white;
                 padding-bottom: 1rem;
             }
             &__description{

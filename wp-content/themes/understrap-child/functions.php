@@ -89,3 +89,19 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();   
+}
+
+@ini_set( 'upload_max_size' , '256M' );
+@ini_set( 'post_max_size', '256M');
+@ini_set( 'max_execution_time', '300' );
+
+function enable_svg_upload( $upload_mimes ) {
+    $upload_mimes['svg'] = 'image/svg+xml';
+    $upload_mimes['svgz'] = 'image/svg+xml';
+    return $upload_mimes;
+}
+
+add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );

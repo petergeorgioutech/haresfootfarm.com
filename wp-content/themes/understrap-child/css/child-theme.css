@@ -15008,11 +15008,33 @@ html {
   flex-wrap: wrap;
   width: 100%;
   height: 100vh;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922), inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   color: white;
+}
+.hero-wrapper.has-video:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.hero-wrapper .video-full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .hero-wrapper__content {
   padding: 2rem;
@@ -15022,19 +15044,24 @@ html {
   text-align: center;
 }
 .hero-wrapper__content__title {
+  z-index: 2;
   display: inline-block;
-  border-bottom: 3px solid white;
   padding-bottom: 1rem;
+  color: black;
+  border-bottom: 2px solid black;
 }
 .hero-wrapper__content__description {
+  z-index: 2;
   position: absolute;
   top: 50%;
   left: 10%;
   right: 10%;
   text-align: center;
   font-size: 1.1rem;
+  text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5);
 }
 .hero-wrapper__content__cta {
+  z-index: 2;
   color: white;
   position: absolute;
   width: 100%;
@@ -15044,6 +15071,7 @@ html {
   display: block;
   text-decoration: none;
   font-size: 0.8rem;
+  text-shadow: -1px 1px 7px rgba(0, 0, 0, 0.5);
 }
 .hero-wrapper__content__cta:hover, .hero-wrapper__content__cta:focus {
   color: white;
@@ -15057,7 +15085,7 @@ html {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 0.5rem;
-  background-image: url("https://haresfootfarm.local/wp-content/uploads/2022/12/down-arrow.png");
+  background-image: url("/wp-content/uploads/2022/12/down-arrow.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -15080,7 +15108,6 @@ html {
   }
   .hero-wrapper__content__title {
     display: inline-block;
-    border-bottom: 3px solid white;
     padding-bottom: 1rem;
   }
   .hero-wrapper__content__description {

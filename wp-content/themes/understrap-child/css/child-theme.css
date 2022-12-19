@@ -14964,6 +14964,329 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.gray-background {
+  background-color: #F4F4F4;
+}
+
+.dark-background {
+  background-color: #000000;
+}
+
+@media (min-width: 992px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+  h2, .h2 {
+    font-size: 2.3rem;
+  }
+  h3, .h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  h4, .h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  h4, .h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922), inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+}
+.hero-wrapper__content {
+  padding: 2rem;
+  position: relative;
+  max-width: 1140px;
+  flex: 1;
+  text-align: center;
+}
+.hero-wrapper__content__title {
+  display: inline-block;
+  border-bottom: 3px solid white;
+  padding-bottom: 1rem;
+}
+.hero-wrapper__content__description {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.hero-wrapper__content__cta {
+  color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  display: block;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.hero-wrapper__content__cta:hover, .hero-wrapper__content__cta:focus {
+  color: white;
+  text-decoration: none;
+}
+.hero-wrapper__content__cta:before {
+  content: "";
+  width: 40px;
+  height: 26px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background-image: url("https://haresfootfarm.local/wp-content/uploads/2022/12/down-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (min-width: 576px) {
+  .hero-wrapper__content__description {
+    font-size: 1.5rem;
+  }
+  .hero-wrapper__content__cta {
+    font-size: 1rem;
+  }
+  .hero-wrapper__content__cta:before {
+    width: 40px;
+    height: 26px;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero-wrapper__content {
+    text-align: center;
+  }
+  .hero-wrapper__content__title {
+    display: inline-block;
+    border-bottom: 3px solid white;
+    padding-bottom: 1rem;
+  }
+  .hero-wrapper__content__description {
+    width: 50%;
+    top: 45%;
+    text-align: left;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-wrapper__content__description {
+    width: 45%;
+    font-size: 2.2rem;
+  }
+}
+
+.location-block__content {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+.location-block__content p {
+  font-size: 0.8rem;
+}
+.location-block__content p:last-child {
+  margin-bottom: 0;
+}
+.location-block__content ol {
+  margin-bottom: 0;
+  padding-left: 15px;
+}
+.location-block__content li {
+  font-size: 0.8rem;
+}
+.location-block__content__location-wrapper {
+  margin-bottom: 1rem;
+}
+@media (max-width: 991px) {
+  .location-block {
+    background-image: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .location-block__content {
+    padding: 2rem;
+  }
+  .location-block__content__location-wrapper {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .location-block {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+    --bs-gutter-x: 0;
+    box-shadow: 2px -2px 50px 7px rgba(0, 0, 0, 0.54) inset;
+    position: relative;
+  }
+  .location-block__static-image {
+    display: none;
+  }
+  .location-block__content {
+    background-color: transparent;
+    padding: 2rem;
+  }
+  .location-block__content p {
+    opacity: 0.9;
+    font-size: 1rem;
+  }
+  .location-block__content li {
+    font-size: 1rem;
+    padding-bottom: 0.3rem;
+    opacity: 0.9;
+  }
+  .location-block__content h3, .location-block__content .h3, .location-block__content h4, .location-block__content .h4 {
+    opacity: 0.9;
+  }
+  .location-block__content__location-wrapper {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 20%;
+    right: 7%;
+    width: 40%;
+  }
+  .location-block__content__key-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    margin-left: 0;
+    padding: 2rem;
+    width: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .location-block__content p {
+    font-size: 1.2rem;
+  }
+  .location-block__content li {
+    font-size: 1.2rem;
+    padding-bottom: 0.3rem;
+  }
+  .location-block__content__location-wrapper {
+    bottom: 16%;
+    right: 5%;
+  }
+}
+
+.flex-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.flex-image-wrapper img {
+  width: 50%;
+}
+
+.contact-form {
+  color: white;
+  text-align: center;
+}
+.contact-form h4, .contact-form .h4, .contact-form p {
+  opacity: 0.9;
+}
+.contact-form form {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.contact-form form .form-control, .contact-form form .wpcf7 .wpcf7-validation-errors, .wpcf7 .contact-form form .wpcf7-validation-errors, .contact-form form .wpcf7 input[type=text], .wpcf7 .contact-form form input[type=text],
+.contact-form form .wpcf7 input[type=search],
+.wpcf7 .contact-form form input[type=search],
+.contact-form form .wpcf7 input[type=url],
+.wpcf7 .contact-form form input[type=url],
+.contact-form form .wpcf7 input[type=tel],
+.wpcf7 .contact-form form input[type=tel],
+.contact-form form .wpcf7 input[type=number],
+.wpcf7 .contact-form form input[type=number],
+.contact-form form .wpcf7 input[type=range],
+.wpcf7 .contact-form form input[type=range],
+.contact-form form .wpcf7 input[type=date],
+.wpcf7 .contact-form form input[type=date],
+.contact-form form .wpcf7 input[type=month],
+.wpcf7 .contact-form form input[type=month],
+.contact-form form .wpcf7 input[type=week],
+.wpcf7 .contact-form form input[type=week],
+.contact-form form .wpcf7 input[type=time],
+.wpcf7 .contact-form form input[type=time],
+.contact-form form .wpcf7 input[type=datetime],
+.wpcf7 .contact-form form input[type=datetime],
+.contact-form form .wpcf7 input[type=datetime-local],
+.wpcf7 .contact-form form input[type=datetime-local],
+.contact-form form .wpcf7 input[type=color],
+.wpcf7 .contact-form form input[type=color],
+.contact-form form .wpcf7 input[type=email],
+.wpcf7 .contact-form form input[type=email],
+.contact-form form .wpcf7 input[type=file],
+.wpcf7 .contact-form form input[type=file],
+.contact-form form .wpcf7 input[type=submit],
+.wpcf7 .contact-form form input[type=submit],
+.contact-form form .wpcf7 select,
+.wpcf7 .contact-form form select,
+.contact-form form .wpcf7 textarea,
+.wpcf7 .contact-form form textarea {
+  background-color: #1D2224;
+  border-color: #2F3538;
+  color: #77838E;
+}
+.contact-form form .wpcf7-form-control[type=submit] {
+  background: white;
+  min-width: 90px;
+  opacity: 0.9;
+  border-color: white;
+  width: auto;
+  margin: 0 auto;
+  color: black;
+}
+.contact-form form .wpcf7-form-control[type=submit]:hover {
+  color: black;
+  opacity: 1;
+}
+.contact-form form .wpcf7-spinner {
+  display: none;
+}
+.contact-form form .wpcf7-not-valid-tip {
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+}
+.contact-form .wpcf7 {
+  max-width: 100%;
+}
+.contact-form .spacing {
+  margin-bottom: 1rem;
+}
+.contact-form .spacing:nth-child(3) {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .contact-form .spacing {
+    margin-bottom: 0;
+  }
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

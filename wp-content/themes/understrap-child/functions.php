@@ -105,3 +105,26 @@ function enable_svg_upload( $upload_mimes ) {
 }
 
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
+
+function my_login_page_remove_back_to_link() { ?>
+    <style type="text/css">
+        body.login div#login p#backtoblog {
+          display: none;
+        }
+		body.login{
+			background: #3b3b3b;
+		}
+		.login a{
+			color:white !important;
+		}
+		.login a:hover{
+			text-decoration:underline !important;
+		}
+		.language-switcher{
+			display: none !important;
+		}
+    </style>
+<?php }
+
+//This loads the function above on the login page
+add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );

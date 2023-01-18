@@ -33,7 +33,41 @@ $section3_image_2			= get_field('section3_image_2');
 get_header();
 ?>
 
-<div class="hero-wrapper ". <?php if ($hero_video) :  echo 'has-video'; endif; ?>" style="background-image:url(<?= $hero_image ?>)">
+<header id="main-header" class="top-header">
+	<div class="container">
+		<nav class="social-icons">
+			<ul>
+				<li><a href="tel:12345678"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+				<li><a href="mailto:test@test.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+			</ul>
+		</nav>
+		<a class="brand-logo img-fluid" href=""><img src="https://via.placeholder.com/150x50?text=Logo"></a>
+		<button class="nav-trigger"><span></span><span></span><span></span><span></span></button>
+		
+	</div>
+	<nav class="main-menu">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About us</a></li>
+			<li><a href="/availability">Availability</a></li>
+			<li><a href="/contact-us">Contact us</a></li>
+		</ul>
+	</nav>
+</header>
+
+
+<div class="hero-wrapper video-wrapper has-video">
+  <video playsinline autoplay muted loop style="background: white;">
+    <source src="<?=$hero_video?>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-wrapper__content">
+		<h2 class="hero-wrapper__content__description" style="color: <?=$hero_description_colour?>; text-shadow: -1px 1px 7px <?=$hero_shadow_colour?>;"><?= $hero_description ?></h2>
+		<a href="<?= $hero_button_link ?>" class="hero-wrapper__content__cta arrow-button"><?= $hero_button_text ?></a>
+	</div>
+</div>
+
+<!-- <div class="hero-wrapper ". <?php if ($hero_video) :  echo 'has-video'; endif; ?>" style="background-image:url(<?= $hero_image ?>)">
 	<?php if ($hero_video) { ?>
 		<video id="background-video" class="video-full" autoplay loop muted poster="<?= $hero_image ?>">
 			<source src="<?= $hero_video ?>" type="video/mp4">
@@ -44,12 +78,13 @@ get_header();
 		<h2 class="hero-wrapper__content__description" style="color: <?=$hero_description_colour?>; text-shadow: -1px 1px 7px <?=$hero_shadow_colour?>;"><?= $hero_description ?></h2>
 		<a href="<?= $hero_button_link ?>" class="hero-wrapper__content__cta arrow-button"><?= $hero_button_text ?></a>
 	</div>
-</div>
+</div> -->
 <div class="container my-5" id="about">
 	<div class="row d-flex justify-content-center align-items-center">
 		<div class="col-12 col-lg-5">
 			<h3><?=$section1_title?></h3>
 			<?=$section1_content?>
+			<a href="/" class="btn btn-primary">Read more</a>
 		</div>
 		<div class="col-12 col-lg-6 offset-lg-1">
 			<img src="<?=$section1_image?>" class="img-fluid">
@@ -57,7 +92,7 @@ get_header();
 	</div>
 </div>
 
-<div class="container my-5 location-block" style="background-image:url(<?=$location_image_desktop?>)">
+<!-- <div class="container my-5 location-block" style="background-image:url(<?=$location_image_desktop?>)">
 	<img src="<?=$location_image_mobile?>" class="img-fluid location-block__static-image">
 	<div class="location-block__content">
 		<div class="row">
@@ -71,7 +106,7 @@ get_header();
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="gray-background content-wrapper py-5">
 	<div class="container">
@@ -82,6 +117,7 @@ get_header();
 			<div class="col-12 col-md-6 offset-md-1">
 				<h3><?=$section2_title?></h3>
 				<?=$section2_content?>
+				<a href="/" class="btn btn-primary">Read more</a>
 			</div>
 		</div>
 	</div>
@@ -93,6 +129,7 @@ get_header();
 			<div class="col-12 col-md-6">
 				<h3><?=$section3_title?></h3>
 				<?=$section3_content?>
+				<a href="/" class="btn btn-primary">Read more</a>
 			</div>
 			<div class="col-12 col-md-6 flex-image-wrapper">
 				<img src="<?=$section3_image_1?>">

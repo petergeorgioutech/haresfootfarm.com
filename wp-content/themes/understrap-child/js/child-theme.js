@@ -1,6 +1,6 @@
 /*!
   * Understrap v1.2.0 (https://understrap.com)
-  * Copyright 2013-2022 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
+  * Copyright 2013-2023 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
   * Licensed under GPL-3.0 (undefined)
   */
 (function (global, factory) {
@@ -6742,6 +6742,34 @@
 	    }, false);
 	  }
 	})();
+
+	jQuery(document).ready(function ($) {
+	  var windowHeight = $(window).height();
+	  var headerHeight = $('.top-header .container').outerHeight();
+	  var menuHeight = windowHeight - headerHeight;
+	  $(".main-menu").css('top', headerHeight);
+	  $(".video-wrapper").css('height', menuHeight);
+	  $(".nav-trigger").on('click', function () {
+	    var windowHeight = $(window).height();
+	    var headerHeight = $(this).parent().parent().find('.container').outerHeight();
+	    var menuHeight = windowHeight - headerHeight;
+	    $(this).toggleClass('open');
+	    $(this).parent().parent().toggleClass('show-menu');
+	    $('body').toggleClass('lock');
+	    $(this).parent().next(".main-menu").css('top', headerHeight).css('height', menuHeight + 'px');
+	    if ($(this).hasClass('open')) {
+	      $(this).parent().next(".main-menu").css('top', headerHeight).css('height', menuHeight + 'px');
+	    } else {
+	      $(this).parent().next(".main-menu").css('top', headerHeight).css('height', '0');
+	    }
+	  });
+	  var $header = $(".top-header");
+	    $header.before($header.clone(true).addClass("clone"));
+	  $(window).on("scroll", function () {
+	    var fromTop = $(window).scrollTop();
+	    $("body").toggleClass("down", fromTop > 200);
+	  });
+	});
 
 	exports.Alert = alert;
 	exports.Button = button;

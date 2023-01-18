@@ -1,0 +1,121 @@
+.location-block {
+    &__content {
+        background-color: black;
+        color: white;
+        padding: 1rem;
+
+        p {
+            font-size: 0.8rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ol {
+            margin-bottom: 0;
+            padding-left: 15px;
+        }
+
+        li {
+            font-size: 0.8rem;
+        }
+
+        &__location-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        &__key-wrapper {}
+    }
+
+    @include for-tablet-landscape-down {
+        background-image: none !important;
+    }
+
+    @include for-tablet-portrait-up {
+        &__content {
+            padding: 2rem;
+
+            &__location-wrapper {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        background: {
+            repeat: no-repeat;
+            size: cover;
+            position: center
+        }
+
+        width:100%;
+        height:800px;
+        --bs-gutter-x: 0;
+        box-shadow: 2px -2px 50px 7px rgba(0, 0, 0, 0.54) inset;
+        position: relative;
+
+        &__static-image {
+            display: none;
+        }
+
+        &__content {
+            background-color: transparent;
+            padding: 2rem;
+
+            p {
+                opacity: 0.9;
+                font-size: 1rem;
+            }
+
+            li {
+                font-size: 1rem;
+                padding-bottom: 0.3rem;
+                opacity: 0.9;
+            }
+
+            h3,
+            h4 {
+                opacity: 0.9;
+            }
+
+            &__location-wrapper {
+                margin-bottom: 0;
+                position: absolute;
+                bottom: 20%;
+                right: 7%;
+                width: 40%;
+            }
+
+            &__key-wrapper {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: rgba(black, 0.8);
+                margin-left: 0;
+                padding: 2rem;
+                width: auto;
+
+                h4 {}
+            }
+        }
+    }
+
+    @include for-desktop-up {
+        &__content {
+            p {
+                font-size: 1.2rem;
+            }
+
+            li {
+                font-size: 1.2rem;
+                padding-bottom: 0.3rem;
+            }
+
+            &__location-wrapper {
+                bottom: 16%;
+                right: 5%;
+            }
+        }
+    }
+}

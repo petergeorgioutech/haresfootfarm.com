@@ -6769,6 +6769,16 @@
 	    var fromTop = $(window).scrollTop();
 	    $("body").toggleClass("down", fromTop > 200);
 	  });
+
+	  // Slick Slider options
+	  $('.slides').slick({
+	    infinite: true,
+	    dots: true,
+	    arrows: false
+	  });
+	  $('div[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+	    $('.slides').slick('setPosition');
+	  });
 	});
 
 	exports.Alert = alert;

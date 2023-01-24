@@ -1,9 +1,10 @@
 <?php
-$hero_video					= get_field('hero_background_video');
-$hero_title					= get_field('hero_title');
-$hero_description			= get_field('hero_description');
-$hero_button_text			= get_field('hero_button_text');
-$hero_button_link			= get_field('hero_button_link');
+/*
+	Template Name: Default Page
+*/
+
+$featuredImage				= get_field('featured_image');
+$backgroundColor			= get_field('background_color');
 
 $section1_title				= get_field('section1_title');
 $section1_content			= get_field('section1_content');
@@ -21,22 +22,18 @@ $section3_image_1			= get_field('section3_image_1');
 $section3_image_2			= get_field('section3_image_2');
 $section3_button_link		= get_field('section3_button_link');
 
-
 get_header();
 ?>
 
-<?php if ($hero_video) : ?>
-<div class="hero-wrapper video-wrapper has-video">
-  <video playsinline autoplay muted loop style="background: white;">
-    <source src="<?=$hero_video?>" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="hero-wrapper__content">
-		<h2 class="hero-wrapper__content__description"><?= $hero_description ?></h2>
-		<a href="<?= $hero_button_link ?>" class="hero-wrapper__content__cta arrow-button"><?= $hero_button_text ?></a>
-	</div>
-</div>
+
+<?php if ($featuredImage) : ?>
+	<div class="featured-image" style="background-image:url(<?=$featuredImage?>)">
+<?php else : ?>
+	<div class="featured-image" style="background-color:<?=$backgroundColor?>">
 <?php endif; ?>
+<h1 class="title"><?=the_title()?></h1>
+</div>
+
 <?php if ($section1_content) : ?>
 <div class="container my-5 content-wrapper image-last" id="about">
 	<div class="row d-flex justify-content-center align-items-center">
@@ -110,5 +107,4 @@ get_header();
 	</div>
 </div>
 <?php endif; ?>
-
 <?php get_footer(); ?>

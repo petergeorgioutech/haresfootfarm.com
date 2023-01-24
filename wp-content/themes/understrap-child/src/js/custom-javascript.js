@@ -23,7 +23,6 @@ jQuery(document).ready(function($){
         } else {
             $(this).parent().next(".main-menu").css('top', headerHeight).css('height', '0');
         }
-
     });
     
     var $header = $(".top-header"),
@@ -32,4 +31,17 @@ jQuery(document).ready(function($){
         var fromTop = $(window).scrollTop();
         $("body").toggleClass("down", (fromTop > 200));
     });
+
+    // Slick Slider options
+    $('.slides').slick({
+        infinite: true,
+        dots: true,
+        arrows: false
+    });
+
+    $('div[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $('.slides').slick('setPosition');
+    });
+
+    
 });

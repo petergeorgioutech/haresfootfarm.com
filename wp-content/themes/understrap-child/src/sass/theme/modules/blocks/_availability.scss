@@ -1,0 +1,188 @@
+.unit-wrapper{
+    background-color: $greyColor;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .wrapper-text{
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .unit-nav{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        margin-bottom: 2rem;
+        --bs-nav-tabs-border-color: transparent;
+        .unit-nav-item{
+            margin-right: 1.5rem;
+            cursor: pointer;
+            opacity: 0.6;
+            &:last-child{
+                margin-right: 0;
+            }
+            &.let{
+                // cursor: not-allowed;
+                opacity: 0.6;
+            }
+            &:hover{
+                opacity: 1;
+            }
+            &.active{
+                opacity: 1;
+                .unit-nav-item-title{
+                }
+            }
+            .unit-nav-item-title{
+                display: block;
+                color:black;
+                border-bottom:3px solid darken($greyColor, 15);
+                text-transform: uppercase;
+                padding-bottom: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            .unit-availability{
+                display: inline-block;
+                text-transform: uppercase;
+                color:black;
+                border:1px solid black;
+                background-color:white;
+                padding:0.1rem 0.3rem 0.05rem;
+                font-size: 0.8rem;
+                &.let{
+                    background-color: black;
+                    color:white;
+                }
+            }
+        }
+    }
+
+    .unit-container{
+        .unit-item{
+            .unit-item-content{
+                .unit-title{
+                    text-transform: uppercase;
+                }
+                .unit-subtitle{
+                    font-weight: 600;
+                }
+                .unit-description{
+
+                }
+                .button-wrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .unit-download-brochure{
+                        display: block;
+                        color:black;
+                        font-weight: 600;
+                        text-decoration: none;
+                        .download-icon{
+                        }
+                    }
+                    .unit-enquire{
+                        display: block;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color:black;
+                        border-bottom:2px solid black;
+                        padding-bottom: 0.25rem;
+                        text-align: center;
+                    }
+                }
+            }
+            .unit-image-gallery{
+                margin-top: 1rem;
+                .slider{
+                    .slides{
+                        div{
+                            width:100%;
+                            height:350px;
+                            background:{
+                                repeat:no-repeat;
+                                size:cover;
+                                position:center;
+                                color:transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            .floor-plan-wrapper{
+                h4{
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+    @include for-tablet-landscape-up{    
+        .unit-container{
+            .unit-item{
+                &.active{
+                    display: flex;
+                }
+                flex-wrap: wrap;
+                align-items: center;
+                gap:5%;
+                .unit-item-content{
+                    width:35%;
+                    .button-wrapper{
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .unit-download-brochure{
+                            width:100%;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+                .unit-image-gallery{
+                    width:60%;
+                    .slider{
+                        margin-bottom:30px;
+                        border:none;
+                        background:transparent;
+                        .slides{
+                            div{
+                                width:100%;
+                                height:450px;
+                            }
+                        }
+                    }
+                }
+                .floor-plan-wrapper{
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+    @include for-big-desktop-up{    
+        .unit-container{
+            .unit-item{
+                .unit-image-gallery{
+                    .slider{
+                        .slides{
+                            div{
+                                height:550px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    border: none;
+}
+
+
+.flex-direction-nav a.flex-next, 
+.flex-direction-nav a.flex-prev{
+    display:none;
+}

@@ -5,3 +5,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.map-wrapper{
+    iframe{
+        height:400px;
+        @include for-tablet-portrait-up {
+            height:500px;
+        }
+        @include for-desktop-up {
+            height:600px;
+        }
+        @include for-big-desktop-up {
+            height:700px;
+        }
+    }
+}

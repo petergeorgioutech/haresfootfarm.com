@@ -1,0 +1,9 @@
+.content-wrapper{    
+    @include for-phone-only {
+        &.image-first{
+            img{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
